@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>bookshop</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<display-name>BookServlet</display-name>
+		<servlet-name>BookAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.BookAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookAction.do</servlet-name>
+		<url-pattern>/BookAction.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>AdminServlet</display-name>
+		<servlet-name>AdminAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.AdminAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminAction.do</servlet-name>
+		<url-pattern>/AdminAction.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>UserServlet</display-name>
+		<servlet-name>UserAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.UserAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserAction.do</servlet-name>
+		<url-pattern>/UserAction.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>OrderAction</display-name>
+		<servlet-name>OrderAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.OrderAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderAction.do</servlet-name>
+		<url-pattern>/OrderAction.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>BookCartAction</display-name>
+		<servlet-name>BookCartAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.BookCartAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookCartAction.do</servlet-name>
+		<url-pattern>/BookCartAction.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>ShopCarAction</display-name>
+		<servlet-name>ShopCarAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.ShopCarAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShopCarAction.do</servlet-name>
+		<url-pattern>/ShopCarAction.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>BookClassAction</display-name>
+		<servlet-name>BookClassAction.do</servlet-name>
+		<servlet-class>org.edu2act.java.bookshop.servlets.BookClassAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookClassAction.do</servlet-name>
+		<url-pattern>/BookClassAction.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.edu2act.java.bookshop.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>Authorization</filter-name>
+		<filter-class>org.edu2act.java.bookshop.filter.AuthorizationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Authorization</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Authorization</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+</web-app>
